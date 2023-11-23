@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Review Form</title>
+        <link rel="stylesheet" href="./assets/css/index.css"/>
+    </head>
+    <body>
+        <div class="h-screen w-screen flex-col justify-between">
+            <div class="bg-black w-full p-sm text-white">Navbar element  go here</div>
+
+            <div class="w-full flex justify-between h-full">
+                <div class="w-40 h-full bg-black flex-col items-center justify-center">
+                    <div class="flex-col">
+                        <div class="flex items-center">
+                             <img alt="logo" src="brand logo icon please put in assets/images/logo.png" />
+                            <h6 class="text-white font-bold">Potato Inc</h6>
+                        </div>
+                        <h1 class="text-white">Give Us</h1>
+                        <h1 class="text-blue">Your</h1>
+                        <h1 class="mb-10 text-white">Feedback</h1>
+                        <h3 class="text-white font-bold">Because You Matter!</h3>
+                    </div>
+                  
+                </div>
+                <form class="w-full h-full flex justify-center items-center">
+                        <div id="form" class="shadow rounded-sm p-lg flex-col items-center w-50 h-75 overflow-clip">
+                                <!-- This holds the form content will be injected bby js on page load -->
+                        </div>
+                </form>
+            </div>
+
+            <div class="bg-black w-full p-sm text-white">Footer elemnts go here</div>
+        </div>
+    </body>
+    <script src="./assets/js/index.js"></script>
+    <script type="text/javascript">
+        // Step 1 of the form contains inputs, emojis and submit button
+       const step1 = `
+                        <h1 class="m-10">Tell Us What You Think</h1>
+                        <div class="w-full flex-col mb-10">
+                            <label class="font-md mb-10 text-bold">Name</label>
+                            <input class=" mb-10 input-border p-sm" placeholder="Beod Wilson" />
+                        </div>
+                        <div class="w-full flex items-center justify-between mb-10">
+                            <div class="cursor-pointer">🤔</div>
+                            <div class="cursor-pointer">🤔</div>
+                            <div class="cursor-pointer">🤔</div>
+                            <div class="cursor-pointer">🤔</div>
+                            <div class="cursor-pointer">🤔</div>
+                        </div>
+                        <div class="w-full flex-col mb-10">
+                            <label class="font-md mb-10 text-bold">Comment</label>
+                            <textarea class="max-height-200px mb-10 input-border p-sm" placeholder="This was awesome"></textarea>
+                        </div>
+                        <div class="w-full flex justify-end">
+                            <button onclick="next()" class="cursor-pointer bg-black rounded-xs p-sm text-white font-bold outline-none">
+                                <span class="">Submit</span>
+                                <img alt="next" src="icon for next please put in assets/icons/next.svg" />
+                            </button>
+                        </div>
+        `;
+
+        // Step 2 contains the thank you message
+        const step2 = `
+
+                <h1>Thanks For Leaving Your Feedback</h1>
+        `;
+
+        const form = document.getElementById('form');
+
+        const loadForm = () => {
+                form.innerHTML =  step1;
+        }
+
+        window.addEventListener('load', loadForm, false);
+
+        const next = () => {
+            // To do add
+            form.innerHTML = step2;
+        }
+    </script>
+</html>
